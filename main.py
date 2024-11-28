@@ -22,18 +22,21 @@ class MainTask:
         for stud in self.stud_list:
             print(stud)
 
+    def print_student_list(self, stud):
+        filtered_students = []
+        for student in self.student_list:
+            if student.stud == stud:
+                filtered_students.append(student)
+        a = sorted(filtered_students, key=lambda student: student.date)
+        for i in a:
+            print(i.name)
 
-def main():
+
+if __name__ == '__main__':
     with open("test_data.txt", "r", encoding="utf-8") as file:
         data = file.readlines()
-
 
     dishes = MainTask(data)
     dishes.print_stud_list()
 
-    print("Вывод:\n")
-    for dish in dishes.stud_list:
-        print(f"{dish}")
-
-if __name__ == '__main__':
-    main()
+    Students.print_student_list("Salut")
