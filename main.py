@@ -30,7 +30,9 @@ class MainTask:
         sorted_dishes = sorted(filtered_dishes, key=lambda x: x.date)  # Сортируем по объекту datetime
         return sorted_dishes
 
-def main():
+
+
+if __name__ == '__main__':
     with open("test_data.txt", "r", encoding="utf-8") as file:
         data = file.readlines()
 
@@ -43,3 +45,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
